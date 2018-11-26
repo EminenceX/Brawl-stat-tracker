@@ -1,7 +1,6 @@
 package tournament;
 
 import java.io.*;
-import java.lang.*;
 import java.util.*;
 
 /**
@@ -19,7 +18,7 @@ public class CreateUser {
 
         try {
             ptf = new Formatter(name);
-        } catch (Exception e) {
+        } catch (FileNotFoundException e) {
             System.out.println("you have an error");
         }
     }
@@ -52,7 +51,7 @@ public class CreateUser {
         try{
             File f = new File("numUsers.txt");
             overWrite("NextUserNumber " + numUsersInt, f);
-        }catch(Exception e){
+        }catch(IOException e){
         }
         
         
@@ -60,16 +59,16 @@ public class CreateUser {
     
     public void overWrite(String s, File f) throws IOException {
         
-        FileWriter fw = new FileWriter(f);
-        fw.write(s);
-        fw.close();
+        try (FileWriter fw = new FileWriter(f)) {
+            fw.write(s);
+        }
     }
    
     //Appends text file
     public void Append(String s, File f) throws IOException {
-        FileWriter fw = new FileWriter(f, true);
-        fw.write(s);
-        fw.close();
+        try (FileWriter fw = new FileWriter(f, true)) {
+            fw.write(s);
+        }
     }
 
     public void closeFile() {

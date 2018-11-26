@@ -38,6 +38,8 @@ public class UserName extends javax.swing.JFrame {
         jButton1.setText("jButton1");
 
         setTitle("UserName");
+        setForeground(java.awt.Color.darkGray);
+        setIconImages(null);
 
         labelUserName.setFont(new java.awt.Font("DokChampa", 1, 14)); // NOI18N
         labelUserName.setText("Username:");

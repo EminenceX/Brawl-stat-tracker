@@ -1,8 +1,5 @@
 package tournament;
 
-import java.util.Scanner;
-import javax.swing.JFrame;
-import java.util.*;
 import java.util.Random;
 
 /**

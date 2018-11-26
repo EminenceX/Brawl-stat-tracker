@@ -2,7 +2,6 @@ package tournament;
 
 import java.util.Scanner;
 import java.io.*;
-import java.util.*;
 
 /**
  *
@@ -18,7 +17,7 @@ public class Records {
 
         try {
             read = new Scanner(new File(name));
-        } catch (Exception e) {
+        } catch (FileNotFoundException e) {
             System.out.println("Could not find User");
         }
     }
@@ -34,7 +33,7 @@ public class Records {
     public String numUsers() {
         try {
             read = new Scanner(new File("numUsers.txt"));
-        } catch (Exception e) {
+        } catch (FileNotFoundException e) {
             System.out.println("Could not find file");
         }
 
@@ -56,7 +55,7 @@ public class Records {
 
         try {
             read = new Scanner(new File("Usernames.txt"));
-        } catch (Exception e) {
+        } catch (FileNotFoundException e) {
             System.out.println("Could not find file");
         }
 
