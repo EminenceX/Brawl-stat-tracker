@@ -1,7 +1,5 @@
 package tournament;
 
-
-
 /**
  *
  * @author Angus
@@ -27,7 +25,7 @@ public class OptionsSetting extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Georgia", 0, 24)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gear.png.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tournament/resources/gear.png.png"))); // NOI18N
         jLabel1.setToolTipText("tool tip test");
         jLabel1.setBorder(new javax.swing.border.MatteBorder(null));
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
