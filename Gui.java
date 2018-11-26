@@ -28,13 +28,23 @@ public class Gui extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Main Window");
 
-        bracketButton.setText("Bracket");
+        bracketButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        bracketButton.setText("Create Bracket");
+        bracketButton.setAutoscrolls(true);
+        bracketButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bracketButton.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        bracketButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bracketButtonMouseClicked(evt);
+            }
+        });
         bracketButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bracketButtonActionPerformed(evt);
             }
         });
 
+        playerStatsButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         playerStatsButton.setText("Player Stats");
         playerStatsButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -47,6 +57,7 @@ public class Gui extends javax.swing.JFrame {
             }
         });
 
+        optionsButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         optionsButton.setText("Options");
         optionsButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -59,6 +70,7 @@ public class Gui extends javax.swing.JFrame {
             }
         });
 
+        newUserButton.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         newUserButton.setText("+ New User");
         newUserButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -144,6 +156,14 @@ public class Gui extends javax.swing.JFrame {
     private void bracketButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bracketButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bracketButtonActionPerformed
+
+    private void bracketButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bracketButtonMouseClicked
+        Bracket itemloader = new Bracket();
+        itemloader.setSize(500, 500);
+        itemloader.setVisible(true);
+        this.setVisible(true);
+        itemloader.toFront();
+    }//GEN-LAST:event_bracketButtonMouseClicked
 
     /**
      * @param args the command line arguments
