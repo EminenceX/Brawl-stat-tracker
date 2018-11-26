@@ -159,7 +159,6 @@ public class Gui extends javax.swing.JFrame {
 
     private void bracketButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bracketButtonMouseClicked
         Bracket itemloader = new Bracket();
-        itemloader.setSize(500, 500);
         itemloader.setVisible(true);
         this.setVisible(true);
         itemloader.toFront();

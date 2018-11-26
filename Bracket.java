@@ -22,19 +22,86 @@ public class Bracket extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        playersField = new javax.swing.JTextField();
+        toolLabal = new javax.swing.JLabel();
+        doneButton = new javax.swing.JButton();
+
+        playersField.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        playersField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        playersField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                playersFieldActionPerformed(evt);
+            }
+        });
+
+        toolLabal.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        toolLabal.setText("Players:");
+
+        doneButton.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        doneButton.setText("Create Bracket");
+        doneButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                doneButtonMouseClicked(evt);
+            }
+        });
+        doneButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                doneButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(162, 162, 162)
+                        .addComponent(toolLabal))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(playersField, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                            .addComponent(doneButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(132, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(92, Short.MAX_VALUE)
+                .addComponent(toolLabal)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(playersField, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(doneButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(79, 79, 79))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void playersFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playersFieldActionPerformed
+       
+    }//GEN-LAST:event_playersFieldActionPerformed
+
+    private void doneButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_doneButtonMouseClicked
+        String numPlayers = playersField.getText();
+        try {
+            int players = Integer.parseInt(numPlayers);
+            if (players >= 4 && players <= 8) {
+            CreateBracket Bracket = new CreateBracket(players);
+                System.out.println(players); // confirmation of it working
+                this.dispose();
+            }
+        } catch (NumberFormatException e) { // catch the exception if there is no integer
+            System.out.println("no integer found");
+        }   
+    }//GEN-LAST:event_doneButtonMouseClicked
+
+    private void doneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doneButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_doneButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -72,5 +139,8 @@ public class Bracket extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton doneButton;
+    private javax.swing.JTextField playersField;
+    private javax.swing.JLabel toolLabal;
     // End of variables declaration//GEN-END:variables
 }
