@@ -95,6 +95,7 @@ public class UserName extends javax.swing.JFrame {
         cu.defaultProfile(userName);
         cu.addUsername(userName);
         cu.closeFile();
+        cu.createCharFiles(userName);
         this.dispose();
     }//GEN-LAST:event_okButtonMouseClicked
 

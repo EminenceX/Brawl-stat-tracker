@@ -4,6 +4,7 @@ import java.util.Scanner;
 import javax.swing.JFrame;
 import java.util.*;
 import java.util.Random;
+import javax.swing.JLabel;
 
 /**
  *
@@ -15,6 +16,13 @@ public class Main {
         
         Gui gui = new Gui();
         gui.setVisible(true);
+        
+        
+        
+        
+        
+        
+        
     }
     //int[] array = new int[5];
     //arrayMixer(array);
@@ -38,6 +46,4 @@ public class Main {
             array = arrayCopy;
         }
     }
-    
-    
 }

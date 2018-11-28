@@ -29,6 +29,11 @@ public class Gui extends javax.swing.JFrame {
         setTitle("Main Window");
 
         bracketButton.setText("Bracket");
+        bracketButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bracketButtonMouseClicked(evt);
+            }
+        });
 
         playerStatsButton.setText("Player Stats");
         playerStatsButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -111,10 +116,10 @@ public class Gui extends javax.swing.JFrame {
     }//GEN-LAST:event_optionsButtonMouseClicked
 
     private void newUserButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newUserButtonMouseClicked
-        UserName itemloader = new UserName();
-        itemloader.setVisible(true);
+        UserName itemLoader = new UserName();
+        itemLoader.setVisible(true);
         this.setVisible(true);
-        itemloader.toFront();
+        itemLoader.toFront();
         
     }//GEN-LAST:event_newUserButtonMouseClicked
 
@@ -123,13 +128,20 @@ public class Gui extends javax.swing.JFrame {
     }//GEN-LAST:event_playerStatsButtonActionPerformed
 
     private void playerStatsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_playerStatsButtonMouseClicked
-        PlayerStats itemloader = new PlayerStats();
-        itemloader.setSize(500, 500);
-        itemloader.setVisible(true);
+        PlayerStats itemLoader = new PlayerStats();
+        itemLoader.setSize(500, 500);
+        itemLoader.setVisible(true);
         this.setVisible(true);
-        itemloader.toFront();
+        itemLoader.toFront();
         
     }//GEN-LAST:event_playerStatsButtonMouseClicked
+
+    private void bracketButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bracketButtonMouseClicked
+        GameType itemLoader = new GameType();
+        itemLoader.setVisible(true);
+        this.setVisible(true);
+        itemLoader.toFront();
+    }//GEN-LAST:event_bracketButtonMouseClicked
 
     /**
      * @param args the command line arguments
